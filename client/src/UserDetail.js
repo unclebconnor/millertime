@@ -13,49 +13,50 @@ class UserDetail extends Component {
         brandingStatementToUpdate: '',
         unicornToUpdate: ''
     }
-    this.handleBrandingStatement = this.handleBrandingStatement.bind(this);
-    this.updateBranding = this.updateBranding.bind(this);
-    // console.log("aljfa;ljfa;lgjas; should say beavis .... " + this.state.user.name);
+    this.handleStatementsToUpdate = this.handleStatementsToUpdate.bind(this);
+    this.updateStatements = this.updateStatements.bind(this);
   }
 
-  handleBrandingStatement(e){
-    // var getBrand = e.target.value;
+  handleStatementsToUpdate(e){
     this.setState({
-      brandingStatementToUpdate: e.target.value
-    })
-  //  console.log("....................................." + this.state.user.email);
+      brandingStatementToUpdate: e.target.value,
+      unicornToUpdate: e.target.value
+    });
   }
 
-  updateBranding(e){
-    console.log("lkdslfja;ldkfjas;ldkfj" + this.state);
+  updateStatements(e){
     e.preventDefault()
     var temp;
     temp = this.state.user;
-    console.log("this is the temp var" + temp);
     temp.brandingStatement = this.state.brandingStatementToUpdate;
+    temp.unicornJob = this.state.unicornToUpdate;
     this.setState({
     user: temp
   });
-  // handleUnicorn(e){
-
-  // }
-  // this.brandingStatementToUpdate = this.brandingStatementToUpdate.bind(this);
 }
 
   render() {
-    console.log(this.state.user, "more things to be here");
     return (
         <div>
             <h1>Keep BethBot happy: evolve your brand and vision</h1>
-            <form onSubmit = {this.updateBranding}>
-              Update Your Branding Statement:
-                <input type="text" placeholder={this.state.user.brandingStatement} onChange={(e)=> this.handleBrandingStatement(e)} />
-                {/* <input type="text" placeholder='what makes your unicorn'/>     */}
-                {/* <button onClick={(e) => this.brandingStatementToUpdate(e)}>Save</button> */}
+            <p>"When in doubt, run a for loop" - Beth</p>
+            <form onSubmit = {this.updateStatements}>
+                Current Branding Statement:  {this.state.user.brandingStatement}
+                <br />
+                <input type="text" 
+                placeholder="Evolve Your Brand" 
+                onChange={(e)=> this.handleStatementsToUpdate(e)} />
+                <br />
+                Unicorn Job Specs: {this.state.user.unicornJob}
+                <br/>
+                <input type="text"
+                placeholder="Add to your hopes and dreams"
+                onChange={(e)=> this.handleStatementsToUpdate(e)} />
+                <br/>
                 <input type="submit" value="submit edits" />
             </form>
         </div>
-    )
+    );
   }
   }
 
