@@ -20,9 +20,6 @@ class JobList extends Component {
     fetch("/jobs/addjob")
     .then((r) => r.json())
     .then((r) => {
-      // this.setState({
-      //   selectedJob: r
-      // })
       this.props.componentDidMount();
     })
   }
@@ -43,9 +40,11 @@ class JobList extends Component {
           return(
             <li key={index}>
                 <a className="list-group-item" href="" onClick={(e) => this.handleSelectJobClick(e,{index})}>
-                <div><span className="col md 4">Title: </span><span>{job.title}</span></div>
-                <div><span className="col md 4">Company: </span><span>{job.companyName}</span></div>
-                <div><span className="col md 4">Rating: </span><span>{job.rating}</span></div>
+                <div className={job===this.props.activeJob ? 'bg-primary' : null}>
+                <span>Title: </span><span>{job.title}</span>
+                </div>
+                <div><span>Company: </span><span>{job.companyName}</span></div>
+                <div><span>Rating: </span><span>{job.rating}</span></div>
                 </a>
             </li>
           )
