@@ -20,7 +20,7 @@ class App extends Component {
     this.updateActiveJob = this.updateActiveJob.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
   }
- 
+
   //accepts job...from child
   updateActiveJob(index){
     var newActiveJob = this.state.jobs[index.index];
@@ -40,7 +40,7 @@ class App extends Component {
       })
     })
   }
-  
+
   render() {
     console.log("APPSTATE", this.state)
     return (
@@ -64,7 +64,7 @@ class App extends Component {
               </ul>
               <ul className="nav navbar-nav pull-right">
                 <li className="dropdown">
-                  <a id="nbAcctDD" className="dropdown-toggle" data-toggle="dropdown"><i className="icon-user"></i>Username<i className="icon-sort-down"></i></a>
+                  <a id="nbAcctDD" className="dropdown-toggle" data-toggle="dropdown"><i className="icon-user"></i>< Headline /><i className="icon-sort-down"></i></a>
                   <ul className="dropdown-menu pull-right">
                     <li><a>Log Out</a></li>
                   </ul>
@@ -76,9 +76,9 @@ class App extends Component {
             <div id="sidebar-wrapper" className="col-md-2">
                 <div id="sidebar">
                     <Headline />
-                    <JobList 
-                      activeJob={this.state.activeJob} 
-                      jobs={this.state.jobs} 
+                    <JobList
+                      activeJob={this.state.activeJob}
+                      jobs={this.state.jobs}
                       updateActiveJob={this.updateActiveJob}
                       componentDidMount={this.componentDidMount}
                       />

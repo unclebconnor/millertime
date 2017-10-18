@@ -74,6 +74,18 @@ class JobDetail extends Component {
     //   userData: this.state.userData;
     // })
 
+    // $.ajax({
+    //   method: 'PUT',
+    //   url: "/jobs/jobList",
+    //   data: this.state.userData
+    //   }).done(function(data) {
+    //   // get data returned from the PUT route
+    //   console.log(data);
+
+    // refresh the page we're on using GET to display the item details.
+    // window.location = "/user";
+    // });
+
 
 
   }

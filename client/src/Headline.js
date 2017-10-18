@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from './App.js';
 class Headline extends Component {
     constructor(props) {
         super(props);
@@ -12,25 +13,22 @@ class Headline extends Component {
         };
     }
     componentDidMount() {
-        // fetch('/routes/jobs')
-        //     .then((response) => {
-        //         return response.json()
-        //     }).then((json) => {
-        //         console.log('credits to chad',json)
-        //     }).catch((ex) => {
-        //         console.log('i hate errors', ex)
-        //     })
+        fetch('/routes/jobs')
+            .then((response) => {
+                return response.json()
+            }).then((json) => {
+                console.log('credits to chad',json)
+            }).catch((ex) => {
+                console.log('i hate errors', ex)
+            })
         }
     render() {
+
         return(
-            //Tony don't change the className of the DIV....let's talk in the morning
-            <div>
-                HEADER GONNA GO HERE
-
-            </div>
-
-        )    
-    }   
+            <span id= "headlineDiv">
+            { this.state.user.name }
+            </span>
+        )
+    }
 }
-
 export default Headline;
