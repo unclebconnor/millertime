@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 class JobDetail extends Component {
   constructor(props) {
     super(props)
     //where are the initial states coming from??
-    console.log(this.props.jobs)
+
     this.state = {
       value: "",
       name: "Reggie",
@@ -52,41 +53,18 @@ class JobDetail extends Component {
   }
 
   handleSubmit(e) {
-    {/* make the db call to update everything when the button is pressed  */}
-
-    // var data: {
-    //   title: this.state.userData.title,
-    //   companyName: this.state.userData.companyName,
-    //   skills: this.state.userData.skills,
-    //   rating: this.state.userData.rating,
-    //   statusString: this.state.userData.statusString
-    // }
     //this.state.userData
     e.preventDefault();
 
-    // fetch("/jobs/jobList")
-    //
-    //   console.log("hey here")
-
-    // $.ajax({
-    //   type: "POST",
-    //   url: "/",
-    //   userData: this.state.userData;
-    // })
-
-    // $.ajax({
-    //   method: 'PUT',
-    //   url: "/jobs/jobList",
-    //   data: this.state.userData
-    //   }).done(function(data) {
-    //   // get data returned from the PUT route
-    //   console.log(data);
-
-    // refresh the page we're on using GET to display the item details.
-    // window.location = "/user";
-    // });
-
-
+    $.ajax({
+      method: 'post',
+      url: "/jobs/jobList",
+      data: this.state.userData
+      }).done(function(data) {
+      // get data returned from the PUT route
+      console.log(data);
+    window.location = "/";
+    });
 
   }
 

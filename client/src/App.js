@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("APPSTATE", this.state)
+    console.log("APP STATE", this.state)
     return (
       <Router>
         <div>
@@ -89,7 +89,7 @@ class App extends Component {
                   <div className="page-header">
                     <h3>Admin</h3>
                   </div>
-                  <Route exact path="/jobDetailRoute" component={JobDetail} />
+                  <Route exact path="/jobDetailRoute" component={JobDetail}  />
                   <Route exact path="/userDetailRoute" component={UserDetail} />
                 </div>
                 <div className="col-md-12 footer">
