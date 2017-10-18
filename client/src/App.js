@@ -35,7 +35,8 @@ class App extends Component {
     .then((r) => {
       let arr = r;
       this.setState({
-        jobs: arr
+        jobs: arr,
+        activeJob: arr[0]
       })
     })
   }
