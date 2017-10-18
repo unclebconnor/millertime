@@ -48,6 +48,10 @@ router.get('/joblist',function(req,res,next){
     res.send(jobs);
   })
 
+router.post("/jobList", function(req, res, rext){
+  console.log("hit the route")
+})
+
 
 })
 
